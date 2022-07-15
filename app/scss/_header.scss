@@ -1,0 +1,116 @@
+@use './util' as *;
+
+.header {
+  position: relative;
+  z-index: 1;
+  
+  // Hamburger Open Styles
+  .overlay {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(var(--neutral-dark-gray), transparent);
+  }
+
+  &.open {
+    .header__toggle {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+  
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+  
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__toggle { // Mobile toggle menu
+    
+    > span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: var(--neutral-black);
+      transition: all 300ms ease-in-out;
+      transform-origin: 3px 1px;
+      
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  
+  // Mobile Menu
+  &__menu {
+    position: absolute;
+    width: calc(100% - rem(48));
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    margin-top: rem(24);
+    padding: rem(26);
+    border-radius: 5px;
+    
+    a {
+      display: block;
+      padding: rem(10);
+      color: var(--neutral-black);
+      text-align: center;
+    }
+  }
+
+  nav {
+    position: relative;
+    background: white;
+    padding-top: rem(17);
+    padding-bottom: rem(17);
+  }
+  
+  &__logo {
+    img {
+      height: 30%;
+      width: 30%;
+    }
+  }
+
+  &__links {
+      a {
+        color: var(--neutral-black);
+        font-size: var(--font-lg);
+        position: relative;
+        transition: 300ms ease-in-out;
+
+        &:not(:last-child) {
+          margin-right: 32px;
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          height: 5px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -38px;
+          background: var(--primary-dark-cyan);
+          opacity: 0;
+          transition: 300ms ease-in-out;
+        }
+        
+        &:hover {
+          color: var(--primary-dark-cyan);
+          
+          &::before {
+            opacity: 1;
+          }
+        }        
+      }
+  }
+}

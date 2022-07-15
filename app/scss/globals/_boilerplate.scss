@@ -1,0 +1,175 @@
+@use '../util' as *;
+
+//BOILERPLATE
+html {
+  font-size: 100%; // let the user control the font-size with their browser
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Commissioner', sans-serif;
+
+  font-size: rem(16);
+
+  &.noscroll {
+    overflow: hidden;
+  }
+}
+
+main {
+  max-width: rem(1600);
+}
+
+// container
+.container {
+  padding-right: rem(24);
+  padding-left: rem(24);
+}
+
+.mg-bottom {
+  margin-bottom: rem(12);
+}
+
+.mg-bottom-2 {
+  margin-bottom: rem(20);
+}
+
+//flexbox
+.flex {
+  display: flex;
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-sa {
+    justify-content: space-around;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+// tables
+.vocab-kana-table {
+  //border: 1px solid black;
+  border-collapse: collapse;
+
+  th {
+    color: var(--neutral-white);
+    background-color: var(--primary-dark-cyan);
+    border: 1px solid black;
+  }
+
+  tr {
+    height: rem(32);
+    
+    @include breakpoint(large) {
+      height: rem(40);
+    } 
+
+    &:nth-child(even){
+      background-color: #f2f2f2;
+    }
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }  
+
+  tbody {
+    font-family: var(--font-japanese);
+  }
+
+  td {
+    text-align: center;
+    border: 1px solid black;
+    word-wrap: break-word;
+
+    &:first-child {
+      width: fit-content;
+      font-size: rem(20);
+    }
+
+    &:last-child {
+      font-size: rem(14);
+    }
+
+    &:nth-child(2) {
+      font-size: rem(10);
+    }
+
+    @include breakpoint(large) {
+      
+      &:first-child {
+        width: fit-content;
+        font-size: rem(24);
+      }
+
+      &:last-child {
+        font-size: rem(20);
+      }
+  
+      &:nth-child(2) {
+        font-size: rem(20);
+      }
+    } 
+  }
+}
+
+.kana-table {
+  //border: 1px solid black;
+  border-collapse: collapse;
+  font-size: rem(20);
+
+  @include breakpoint(large) {
+    font-size: rem(24);
+  } 
+
+  th {
+    color: var(--neutral-white);
+    background-color: var(--primary-dark-cyan);
+    border: 1px solid black;
+  }
+
+  tr {
+    height: rem(32);
+
+    @include breakpoint(large) {
+      height: rem(40);
+    } 
+
+    &:nth-child(even){
+      background-color: #f2f2f2;
+    }
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }  
+
+  tbody {
+    font-family: var(--font-japanese);
+  }
+
+  td {
+    width: rem(32);
+    text-align: center;
+    border: 1px solid black;
+
+    @include breakpoint(large) {
+      width: rem(40);
+    } 
+  }
+
+}

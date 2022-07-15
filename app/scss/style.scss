@@ -1,0 +1,14 @@
+@use 'globals';
+@use 'header';
+
+
+
+.margin-section {
+  margin: 0 auto;
+}
+
+
+.container-table {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,22 @@
+@use '../util' as *;
+
+:root {
+
+  // SIZES
+  --max-width: 1600;
+
+  // COLORS
+  --primary-moderate-cyan: hsl(176, 50%, 47%);
+  --primary-dark-cyan: hsl(176, 72%, 28%);
+  --neutral-black: hsl(0, 0%, 0%);
+  --neutral-white: hsl(100, 100%, 100%);
+  --neutral-dark-gray: hsl(0, 0%, 48%);
+  
+  // KANJI FONT
+  --font-japanese: Klee One, cursive;
+  
+  // Font Sizes
+  --font-sm: 0.875rem; // 14px
+  --font-md: 1.125rem; // 18px
+  --font-lg: 2rem; // 32px
+}
