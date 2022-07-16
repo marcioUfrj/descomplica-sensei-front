@@ -27,6 +27,14 @@ body {
 
 main {
   max-width: rem(1600);
+  
+  h2 {
+    margin-bottom: rem(6);
+  }
+
+  h3 {
+    margin-bottom: rem(6);
+  }
 }
 
 table {
@@ -138,6 +146,24 @@ table {
   //border: 1px solid black;
   font-size: rem(20);
 
+  .single-letter {
+    td {
+      width: rem(28);
+      @include breakpoint(large) {
+        width: rem(50);
+      } 
+    }
+  }
+
+  .double-letter {
+    td {
+      width: rem(42);
+      @include breakpoint(large) {
+        width: rem(62);
+      } 
+    }
+  }
+
   @include breakpoint(large) {
     font-size: rem(24);
   } 
@@ -172,16 +198,10 @@ table {
   }
 
   td {
-    word-wrap: normal;
     border: 0;
     padding: 0;
-    width: rem(46);
     text-align: center;
     border: 1px solid black;
-
-    @include breakpoint(large) {
-      width: rem(50);
-    } 
   }
 
 }
