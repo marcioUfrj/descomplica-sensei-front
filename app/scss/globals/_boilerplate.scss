@@ -10,12 +10,15 @@ html {
   box-sizing: inherit;
 }
 
-body {
+body {  
   margin: 0;
   padding: 0;
-  font-family: 'Commissioner', sans-serif;
+  border: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 
-  font-size: rem(16);
+  font-family: 'Commissioner', sans-serif;
+  font-size: rem(18);
 
   &.noscroll {
     overflow: hidden;
@@ -24,6 +27,11 @@ body {
 
 main {
   max-width: rem(1600);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 // container
@@ -62,7 +70,6 @@ main {
 
 // tables
 .vocab-kana-table {
-  //border: 1px solid black;
   border-collapse: collapse;
 
   th {
@@ -129,7 +136,6 @@ main {
 
 .kana-table {
   //border: 1px solid black;
-  border-collapse: collapse;
   font-size: rem(20);
 
   @include breakpoint(large) {
@@ -137,14 +143,17 @@ main {
   } 
 
   th {
+    height: rem(32);
     color: var(--neutral-white);
     background-color: var(--primary-dark-cyan);
     border: 1px solid black;
+    text-align: center;
   }
 
   tr {
-    height: rem(32);
 
+    height: rem(32);
+    
     @include breakpoint(large) {
       height: rem(40);
     } 
@@ -163,12 +172,15 @@ main {
   }
 
   td {
-    width: rem(32);
+    word-wrap: normal;
+    border: 0;
+    padding: 0;
+    width: rem(46);
     text-align: center;
     border: 1px solid black;
 
     @include breakpoint(large) {
-      width: rem(40);
+      width: rem(50);
     } 
   }
 
