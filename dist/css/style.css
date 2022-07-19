@@ -104,9 +104,6 @@ table {
   align-items: center;
 }
 
-.vocab-kana-table {
-  border-collapse: collapse;
-}
 .vocab-kana-table th {
   color: var(--neutral-white);
   background-color: var(--primary-dark-cyan);
@@ -175,6 +172,11 @@ table {
   .kana-table .double-letter td {
     width: 3.875rem;
   }
+}
+.kana-table .first-col-color td:first-child {
+  font-weight: 700;
+  color: var(--neutral-white);
+  background-color: var(--primary-dark-cyan);
 }
 @media (min-width: 64em) {
   .kana-table {

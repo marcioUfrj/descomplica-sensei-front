@@ -78,7 +78,6 @@ table {
 
 // tables
 .vocab-kana-table {
-  border-collapse: collapse;
 
   th {
     color: var(--neutral-white);
@@ -161,6 +160,14 @@ table {
       @include breakpoint(large) {
         width: rem(62);
       } 
+    }
+  }
+
+  .first-col-color {
+    td:first-child {
+       font-weight: 700;
+      color: var(--neutral-white);
+      background-color: var(--primary-dark-cyan);
     }
   }
 
